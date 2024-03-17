@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --global-color: #333333;
+    --accent-color: #166AEA;
+    --accent-hover-color: #0E54BF;
+    --global-font: "Poppins", sans-serif;
+    --global-transition: all 0.3s ease-in-out;
+    --utility-color-danger: #CB1616;
+}
+* {
+    margin: 0;
+    padding: 0;
+    transition: var(--global-transition);
+}
+a {
+    color: var(--global-color);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+body {
+    color: var(--global-color);
+    font-family: var(--global-font);
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.loading {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.eventcontainer {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 48px 24px;
+}
+.page-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.events-count {
+    font-weight: 400;
+}
+.eventslist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 30px 0;
+}
+.event-item {
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    /* border: 1px solid #eeeeee; */
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 24px;
+}
+.event-item .event-title,
+.event-item .event-data,
+.event-item .event-action {
+    flex-grow: 1;
+}
+.event-item .event-title {
+    flex-basis: 45%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3em;
+}
+.event-item .event-date {
+    flex-basis: 15%;
+    font-weight: 500;
+}
+.event-item .event-action {
+    display: flex;
+    justify-content: flex-end;
+}
+.event-item .event-action .btn-register {
+    background-color: var(--accent-color);
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-weight: 500;
+    padding: 12px 32px;
+}
+.event-item .event-action .btn-register:hover {
+    background-color: var(--accent-hover-color);
+    text-decoration: none;
+}
+.event-item .event-action .registration-message {
+    color: var(--utility-color-danger);
+}
+.pagination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.pagination span {
+    align-items: center;
+    background: #F1F1F1;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    height: 38px;
+    width: 38px;
+}
+.pagination span:hover {
+    background-color: #DDDDDD;
+}
+.pagination span.active {
+    background: var(--accent-color);
+    color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+    .event-item {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .event-item .event-title,
+    .event-item .event-data,
+    .event-item .event-action {
+        flex-basis: 100%;
+    }
+    .event-item .event-action {
+        justify-content: inherit;
+    }
+    .event-item .event-date {
+        order: 1;
+    }
+    .event-item .event-title {
+        order: 2;
+    }
+    .event-item .event-action {
+        order: 3;
+    }
+}
